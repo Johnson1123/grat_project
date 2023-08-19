@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import { Header, Footer } from "./Layout";
 import { Home } from "./Pages";
-import "@fontsource-variable/rubik";
 
 function App() {
   const Layout = () => {
