@@ -6,7 +6,7 @@ import { baseurl } from "../../baseurl";
 export default function Activication() {
   const { token } = useParams();
   const navigate = useNavigate();
-  let payload = token.replaceAll("--", ".");
+  let payload = token.replaceAll("---", ".");
   useEffect(() => {
     (async () => {
       try {
