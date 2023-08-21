@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import { Header, Footer } from "./Layout";
 import { Home } from "./Pages";
+import Activication from "./Pages/Activation/Activation";
 
 function App() {
   const Layout = () => {
@@ -30,10 +31,10 @@ function App() {
         // },
       ],
     },
-    // {
-    //   path: "/sign-up-as-agent",
-    //   element: <Agent />,
-    // },
+    {
+      path: "/activation/:token",
+      element: <Activication />,
+    },
 
     // {
     //   path: "/dashboard",
