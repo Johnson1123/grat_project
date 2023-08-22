@@ -12,6 +12,7 @@ import registerSchema from "../../Schema/register";
 import { useFormik } from "formik";
 import axios from "axios";
 import loginShema from "../../Schema/loginShema";
+import { baseurl } from "../../baseurl";
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -61,7 +62,7 @@ function Register({ toggle, setToggle }) {
   const [confirmPassword, setConfirmPassword] = useState(false);
   const onSubmit = async (value, actions) => {
     try {
-      await axios.post("https://gart-api.onrender.com/register-page", value);
+      await axios.post(`${baseurl}/register-page`, value);
     } catch (error) {
       console.log(error);
     }
