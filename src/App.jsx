@@ -25,41 +25,12 @@ function App() {
           path: "/",
           element: <Home />,
         },
-        // {
-        //   path: "/property-page",
-        //   element: <PropertyPage />,
-        // },
       ],
     },
     {
       path: "/activation/:token",
       element: <Activication />,
     },
-
-    // {
-    //   path: "/dashboard",
-    //   element: <Dashboard />,
-    // },
-    // {
-    //   path: "/activation/:token",
-    //   element: <Activation />,
-    // },
-    // {
-    //   path: "/add-property",
-    //   element: <Property />,
-    // },
-    // {
-    //   path: "/login",
-    //   element: <Login />,
-    // },
-    // {
-    //   path: "/retrieve-password",
-    //   element: <RetrievPassword />,
-    // },
-    // {
-    //   path: "/change-password",
-    //   element: <ChangePassword />,
-    // },
   ]);
   return (
     // <Provider store={store}>

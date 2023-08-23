@@ -6,11 +6,11 @@ import { baseurl } from "../../baseurl";
 export default function Activication() {
   const { token } = useParams();
   const navigate = useNavigate();
+  let payload = token;
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.post(`${baseurl}/login-page`, { token });
-        console.log(res);
+        const res = await axios.post(`${baseurl}/activation`, { payload });
         navigate("/");
       } catch (error) {
         console.log(error.data);
