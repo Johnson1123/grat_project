@@ -6,13 +6,16 @@ import {
   AiOutlineClose,
   AiOutlineEye,
   AiOutlineEyeInvisible,
+  AiOutlineInfoCircle,
 } from "react-icons/ai";
+import { GrPowerForceShutdown } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import registerSchema from "../../Schema/register";
 import { useFormik } from "formik";
 import axios from "axios";
 import loginShema from "../../Schema/loginShema";
 import { baseurl } from "../../baseurl";
+import { BsCheck2Circle } from "react-icons/bs";
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -102,56 +105,111 @@ function Register({ toggle, setToggle }) {
           <p className="register-title">Register</p>
           <div className="register-form">
             <form action="" className="form-register" onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-2 div mt-4">
+              <div className="flex flex-col gap-1 div mt-2">
                 <label htmlFor="firstName">First Name</label>
-                <input
-                  type="text"
-                  name="firstName"
-                  id="firstName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.firstName}
-                  className={`${
-                    errors.firstName && touched.firstName && "errors"
-                  }`}
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.firstName}
+                    className={`${
+                      errors.firstName && touched.firstName ? "errors" : "good"
+                    }`}
+                  />
+
+                  {errors.firstName && touched.firstName ? (
+                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
+                      <AiOutlineInfoCircle
+                        size={20}
+                        className="register-icon text-red-600 "
+                      />
+                    </span>
+                  ) : (
+                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
+                      <BsCheck2Circle
+                        size={20}
+                        className="text-green-700 font-extrabold"
+                      />
+                    </span>
+                  )}
+                </div>
               </div>
               {errors.firstName && touched.firstName && (
                 <p className="p-error">{errors.firstName}</p>
               )}
-              <div className="flex flex-col gap-2 div mt-4">
+
+              <div className="flex flex-col gap-1 div mt-2">
                 <label htmlFor="lastName">Last Name</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.lastName}
-                  className={`${
-                    errors.lastName && touched.lastName && "errors"
-                  }`}
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.lastName}
+                    className={`${
+                      errors.lastName && touched.lastName ? "errors" : "good"
+                    }`}
+                  />
+                  {errors.lastName && touched.lastName ? (
+                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
+                      <AiOutlineInfoCircle
+                        size={20}
+                        className="register-icon text-red-600 "
+                      />
+                    </span>
+                  ) : (
+                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
+                      <BsCheck2Circle
+                        size={20}
+                        className="text-green-700 font-extrabold"
+                      />
+                    </span>
+                  )}
+                </div>
               </div>
               {errors.lastName && touched.lastName && (
                 <p className="p-error">{errors.lastName}</p>
               )}
-              <div className="div flex flex-col gap-2 div mt-4">
+              <div className="div flex flex-col gap-1 div mt-2">
                 <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  className={`${errors.email && touched.email && "errors"}`}
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className={`${
+                      errors.email && touched.email ? "errors" : "good"
+                    }`}
+                  />
+                  {errors.email && touched.email ? (
+                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
+                      <AiOutlineInfoCircle
+                        size={20}
+                        className="register-icon text-red-600"
+                      />
+                    </span>
+                  ) : (
+                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
+                      <BsCheck2Circle
+                        size={20}
+                        className="text-green-700 font-extrabold"
+                      />
+                    </span>
+                  )}
+                </div>
               </div>
               {errors.email && touched.email && (
                 <p className="p-error">{errors.email}</p>
               )}
-              <div className="w-[100%] flex flex-col gap-2 div mt-4">
+              <div className="w-[100%] flex flex-col gap-1 div mt-2">
                 <label htmlFor="">Password</label>
                 <div className="in-div relative">
                   <input
@@ -165,7 +223,7 @@ function Register({ toggle, setToggle }) {
                       errors.password && touched.password && "errors"
                     }`}
                   />
-                  <span className="absolute top-[12px] right-4">
+                  <span className="absolute top-[12px] right-2">
                     {password ? (
                       <AiOutlineEyeInvisible
                         className="text-[#a0a0a0]"
@@ -185,7 +243,7 @@ function Register({ toggle, setToggle }) {
               {errors.password && touched.password && (
                 <p className="p-error">{errors.password}</p>
               )}
-              <div className="w-[100%] flex flex-col gap-2 div mt-4">
+              <div className="w-[100%] flex flex-col gap-2 div mt-2">
                 <label htmlFor=""> Confirm Password</label>
                 <div className="in-div relative">
                   <input
@@ -199,7 +257,7 @@ function Register({ toggle, setToggle }) {
                       errors.password && touched.password && "errors"
                     }`}
                   />
-                  <span className="absolute top-[12px] right-4">
+                  <span className="absolute top-[12px] right-2">
                     {confirmPassword ? (
                       <AiOutlineEyeInvisible
                         className="text-[#a0a0a0]"
@@ -235,9 +293,8 @@ function Login({ toggleLogin, setToggleLogin }) {
   const navigate = useNavigate();
   const onSubmit = async (value, actions) => {
     try {
-      console.log(value);
-      const res = await axios.post("https://gart-api.onrender.com", value);
-      console.log(res);
+      const res = await axios.post(`${baseurl}/login-page`, value);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

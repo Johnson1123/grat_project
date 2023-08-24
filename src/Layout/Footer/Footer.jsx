@@ -28,7 +28,7 @@ function Footer() {
           </button>
         </form>
       </div>
-      <div className="lower-footer p-10 bg-slate-700 flex">
+      <div className="lower-footer p-10 bg-slate-700 flex justify-around">
         <div className="footer-box box-1 flex flex-col gap-3">
           <img
             src={images.logo}
@@ -62,34 +62,102 @@ function Footer() {
             </span>
           </div>
         </div>
-
         <div className="footer-box box-2 min-w-[150px]">
           <h3 className="pb-3 text-[20px] border-b-2 text-white font-bold ">
             Company
           </h3>
           <ul>
-            <li className="py-3 border-b-2 border-slate-5 00">
-              <a href="" className="text-white">
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
                 About Us
               </a>
             </li>
-            <li>
-              <a href="">Careers</a>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Careers
+              </a>
             </li>
-            <li>
-              <a href="">Contact Us</a>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Contact Us
+              </a>
             </li>
-            <li>
-              <a href=""></a>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Prolicy
+              </a>
             </li>
-            <li>
-              <a href=""></a>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Privacy
+              </a>
             </li>
           </ul>
         </div>
-
-        <div className="footer-box box-"></div>
-        <div className="footer-box box-"></div>
+        <div className="footer-box box-2 min-w-[150px]">
+          <h3 className="pb-3 text-[20px] border-b-2 text-white font-bold ">
+            Company
+          </h3>
+          <ul>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                About Us
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Careers
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Contact Us
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Prolicy
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Privacy
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-box box-2 min-w-[150px]">
+          <h3 className="pb-3 text-[20px] border-b-2 text-white font-bold ">
+            Company
+          </h3>
+          <ul>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                About Us
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Careers
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Contact Us
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Prolicy
+              </a>
+            </li>
+            <li className="py-3 border-b-2 border-slate-5   00">
+              <a href="" className="text-slate-300 cursor-pointer">
+                Privacy
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
