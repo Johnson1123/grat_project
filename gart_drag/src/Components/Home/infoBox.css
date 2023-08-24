@@ -1,0 +1,6 @@
+.infoBox {
+  transition: all 0.5s;
+}
+.infoBox:hover .infoBox {
+  font-size: 20px;
+}
