@@ -2,8 +2,25 @@ import React from "react";
 import { images } from "../../assets";
 import BlogBox from "../../Components/Home/BlogBox";
 import InfoBox from "../../Components/Home/InfoBox";
+import Menu from "../../Components/Menu/Menu";
+import { data } from "autoprefixer";
+import { useSelector } from "react-redux";
+import LeaderBoard from "../LeaderBoard/LeaderBoard";
 
 function Home() {
+  // const mydata = useSelector((state) => state.carData.carData);
+  // Convert the data to a JSON string
+
+  // const jsonData = JSON.stringify(mydata, null, 2);
+
+  // Create a Blob with the JSON data
+  // const blob = new Blob([jsonData], { type: "application/json" });
+
+  // Create a link to download the JSON file
+  // const a = document.createElement("a");
+  // a.href = URL.createObjectURL(blob);
+  // a.download = "data.json";
+
   return (
     <div>
       <div className="upper-banner flex justify-center mt-5 ">
@@ -28,23 +45,23 @@ function Home() {
           </div>
         </div>
       </div>
-
+      {/* <a href={URL.createObjectURL(blob)} download>
+        Download
+      </a> */}
+      {/* Menu  */}
+      <Menu />
       {/* second section */}
 
       <div className="second-section mt-10 w-[100%] flex flex-col items-center justify-center">
-        <h2 className="text-[30px] font-bold text-slate-600  w-[85%]">
-          New Bugatti race motor
+        <h2 className="text-[30px] font-bold text-[brown] w-[85%]">
+          Latest racing car
         </h2>
         <div className="second-section w-[85%] flex justify-between">
-          <div className="second-section-left-con w-[65%] mt-5">
+          <div className="second-section-left-con w-[65%] my-5">
             <div className="image-con h-[500px]">
-              <img
-                src={images.racingBanner}
-                alt=""
-                className="h-[500px] object-cover w-[100%]"
-              />
+              <LeaderBoard />
             </div>
-            <div className="info-title-container mt-5 text-center font-bold">
+            <div className="info-title-container mt- text-center font-bold">
               <h3 className="text-[24px]">
                 Wolkwagon <table></table>he smartest choice for
                 <span className="text-teal-500 ">speed and power</span>
@@ -54,6 +71,8 @@ function Home() {
               </div>
             </div>
           </div>
+
+          {/* blog */}
           <div className="second-section-right-con w-[25%]">
             <div className="mb-3">
               <span className="text-[24px]  text-slate-600">

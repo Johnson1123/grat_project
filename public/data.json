@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Lexus",
+    "model": "Jeep 330",
+    "Engine": "ruber and steel steem",
+    "generation": "new space",
+    "image": ["car1", "car2", "car3", "car4"]
+  },
+  {
+    "name": "Bugati",
+    "model": "Scope area",
+    "Engine": "fast steem",
+    "generation": "new space",
+    "image": ["car1", "car2", "car3", "car4"]
+  },
+  {
+    "name": "Helip ",
+    "model": "Helip Jet",
+    "Engine": "Helip steel steem",
+    "generation": "Explorer",
+    "image": ["car1", "car2", "car3", "car4"]
+  },
+  {
+    "name": "Verari",
+    "model": "FLo 330",
+    "Engine": "hot steel steem",
+    "generation": "new age",
+    "image": ["car4", "car2", "car3", "car2"]
+  },
+  {
+    "name": "Benz Racer",
+    "model": "Formular standard",
+    "Engine": "ruber and steel steem",
+    "generation": "new space",
+    "image": ["car2", "car5", "car4", "car3"]
+  }
+]

@@ -2,392 +2,109 @@ import React, { useState } from "react";
 import { images } from "../../assets";
 import "./Header.css";
 import { FaBars } from "react-icons/fa";
-import {
-  AiOutlineClose,
-  AiOutlineEye,
-  AiOutlineEyeInvisible,
-  AiOutlineInfoCircle,
-} from "react-icons/ai";
-import { GrPowerForceShutdown } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
-import registerSchema from "../../Schema/register";
-import { useFormik } from "formik";
-import axios from "axios";
-import loginShema from "../../Schema/loginShema";
-import { baseurl } from "../../baseurl";
-import { BsCheck2Circle } from "react-icons/bs";
+import { BiUser } from "react-icons/bi";
+import CForgetPassword from "../../Components/Header/CForgetPassword";
+import CLogin from "../../Components/Header/CLogin";
+import CRegister from "../../Components/Header/CRegister";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [toggle, setToggle] = useState(false);
+
   const [toggleLogin, setToggleLogin] = useState(false);
+
+  const user = useSelector((state) => state?.auth?.userData?.data?.user);
+
+  const navigate = useNavigate();
+
+  const [switchPage, setSwitchPage] = useState(0);
+
   return (
     <div>
       <div className="upper-header">
         <div className="marque text-white">{new Date().toLocaleString()}</div>
         <div className="main-header">
-          <img src={images.logo} alt="" className="header-logo" />
+          <div onClick={() => navigate("/")}>
+            <img src={images.logo} alt="" className="header-logo" />
+          </div>
           <div className="search-header">
             <form action="">
               <input type="text" />
             </form>
             <button className="px-4 btn-search">Search</button>
           </div>
-          <div className="auth">
+          {user ? (
             <button
-              className="btn-auth register"
-              onClick={() => setToggle(!false)}
+              className="flex items-center gap-2  "
+              onClick={() => navigate("/dashboard")}
             >
-              register
+              <BiUser size={25} className="text-white hover:text-slate-200" />
+              <p className="text-white text-lg hover:text-slate-200">
+                {user?.firstname}
+              </p>
             </button>
-            <button
-              className="px-4 btn-auth login"
-              onClick={() => setToggleLogin(!toggleLogin)}
-            >
-              Login
-            </button>
-          </div>
+          ) : (
+            <div className="auth">
+              <button
+                className="btn-auth register"
+                onClick={() => {
+                  setToggle(true);
+                  setSwitchPage(1);
+                }}
+              >
+                register
+              </button>
+              <button
+                className="px-4 btn-auth login"
+                onClick={() => {
+                  setToggle(true);
+                  setSwitchPage(2);
+                }}
+              >
+                Login
+              </button>
+            </div>
+          )}
+
           <span className="header-bar">
             <FaBars />
           </span>
         </div>
       </div>
-      {toggle && <Register toggle={toggle} setToggle={setToggle} />}
-      {toggleLogin && (
-        <Login toggleLogin={toggleLogin} setToggleLogin={setToggleLogin} />
+      {toggle && (
+        <div className="register-container">
+          {switchPage == 1 && (
+            <CRegister
+              toggle={toggle}
+              setToggle={setToggle}
+              setSwitchPage={setSwitchPage}
+            />
+          )}
+          {switchPage == 2 && (
+            <CLogin
+              switchPage={switchPage}
+              setSwitchPage={setSwitchPage}
+              toggle={toggle}
+              setToggle={setToggle}
+            />
+          )}
+          {switchPage == 3 && (
+            <CForgetPassword
+              switchPage={switchPage}
+              setSwitchPage={setSwitchPage}
+              toggle={toggle}
+              setToggle={setToggle}
+            />
+          )}
+        </div>
       )}
     </div>
   );
 }
 
-function Register({ toggle, setToggle }) {
-  const navigate = useNavigate();
-  const [password, setPassword] = useState(false);
-  const [confirmPassword, setConfirmPassword] = useState(false);
-  const onSubmit = async (value, actions) => {
-    try {
-      await axios.post(`${baseurl}/register-page`, value);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const {
-    values,
-    handleChange,
-    handleBlur,
-    errors,
-    touched,
-    isSubmitting,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
-    validationSchema: registerSchema,
-    onSubmit,
-  });
-  console.log(errors);
-
-  return (
-    <div className="register-container">
-      <div className="reg-inner">
-        <span onClick={() => setToggle(!toggle)}>
-          <AiOutlineClose className="register-close" />
-        </span>
-        <div className="left-con">
-          <img src={images.racing} alt="" />
-        </div>
-        <div className="right-con">
-          <p className="register-title">Register</p>
-          <div className="register-form">
-            <form action="" className="form-register" onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-1 div mt-2">
-                <label htmlFor="firstName">First Name</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.firstName}
-                    className={`${
-                      errors.firstName && touched.firstName ? "errors" : "good"
-                    }`}
-                  />
-
-                  {errors.firstName && touched.firstName ? (
-                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
-                      <AiOutlineInfoCircle
-                        size={20}
-                        className="register-icon text-red-600 "
-                      />
-                    </span>
-                  ) : (
-                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
-                      <BsCheck2Circle
-                        size={20}
-                        className="text-green-700 font-extrabold"
-                      />
-                    </span>
-                  )}
-                </div>
-              </div>
-              {errors.firstName && touched.firstName && (
-                <p className="p-error">{errors.firstName}</p>
-              )}
-
-              <div className="flex flex-col gap-1 div mt-2">
-                <label htmlFor="lastName">Last Name</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.lastName}
-                    className={`${
-                      errors.lastName && touched.lastName ? "errors" : "good"
-                    }`}
-                  />
-                  {errors.lastName && touched.lastName ? (
-                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
-                      <AiOutlineInfoCircle
-                        size={20}
-                        className="register-icon text-red-600 "
-                      />
-                    </span>
-                  ) : (
-                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
-                      <BsCheck2Circle
-                        size={20}
-                        className="text-green-700 font-extrabold"
-                      />
-                    </span>
-                  )}
-                </div>
-              </div>
-              {errors.lastName && touched.lastName && (
-                <p className="p-error">{errors.lastName}</p>
-              )}
-              <div className="div flex flex-col gap-1 div mt-2">
-                <label htmlFor="email">Email</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                    className={`${
-                      errors.email && touched.email ? "errors" : "good"
-                    }`}
-                  />
-                  {errors.email && touched.email ? (
-                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
-                      <AiOutlineInfoCircle
-                        size={20}
-                        className="register-icon text-red-600"
-                      />
-                    </span>
-                  ) : (
-                    <span className="absolute right-5 top-[50%] translate-y-[-50%]">
-                      <BsCheck2Circle
-                        size={20}
-                        className="text-green-700 font-extrabold"
-                      />
-                    </span>
-                  )}
-                </div>
-              </div>
-              {errors.email && touched.email && (
-                <p className="p-error">{errors.email}</p>
-              )}
-              <div className="w-[100%] flex flex-col gap-1 div mt-2">
-                <label htmlFor="">Password</label>
-                <div className="in-div relative">
-                  <input
-                    type={password ? "text" : "password"}
-                    name="password"
-                    id="password"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={`px-2 h-[40px] w-[100%] rounded-md focus:outline-none focus:border-none ${
-                      errors.password && touched.password && "errors"
-                    }`}
-                  />
-                  <span className="absolute top-[12px] right-2">
-                    {password ? (
-                      <AiOutlineEyeInvisible
-                        className="text-[#a0a0a0]"
-                        size={20}
-                        onClick={() => setPassword(!password)}
-                      />
-                    ) : (
-                      <AiOutlineEye
-                        className="text-[#a0a0a0]"
-                        size={20}
-                        onClick={() => setPassword(!password)}
-                      />
-                    )}
-                  </span>
-                </div>
-              </div>
-              {errors.password && touched.password && (
-                <p className="p-error">{errors.password}</p>
-              )}
-              <div className="w-[100%] flex flex-col gap-2 div mt-2">
-                <label htmlFor=""> Confirm Password</label>
-                <div className="in-div relative">
-                  <input
-                    type={confirmPassword ? "text" : "password"}
-                    name="confirmPassword"
-                    id="confirmPassword"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={`px-2 h-[40px] w-[100%] rounded-md focus:outline-none focus:border-none ${
-                      errors.password && touched.password && "errors"
-                    }`}
-                  />
-                  <span className="absolute top-[12px] right-2">
-                    {confirmPassword ? (
-                      <AiOutlineEyeInvisible
-                        className="text-[#a0a0a0]"
-                        size={20}
-                        onClick={() => setConfirmPassword(!confirmPassword)}
-                      />
-                    ) : (
-                      <AiOutlineEye
-                        className="text-[#a0a0a0]"
-                        size={20}
-                        onClick={() => setConfirmPassword(!confirmPassword)}
-                      />
-                    )}
-                  </span>
-                </div>
-              </div>
-              {errors.confirmPassword && touched.confirmPassword && (
-                <p className="p-error">{errors.confirmPassword}</p>
-              )}
-              <input
-                className="register-btn w-[100%] bg-teal-600 text-white"
-                type="submit"
-                value="Register"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 function Login({ toggleLogin, setToggleLogin }) {
-  const navigate = useNavigate();
-  const onSubmit = async (value, actions) => {
-    try {
-      const res = await axios.post(`${baseurl}/login-page`, value);
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const {
-    values,
-    handleChange,
-    handleBlur,
-    errors,
-    touched,
-    isSubmitting,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: loginShema,
-    onSubmit,
-  });
-  console.log(values);
-  const [password, setPassword] = useState(false);
-  return (
-    <div className="register-container">
-      <div className="flex h-[90%] w-[70%] bg-white justify-center items-center rounded-md relative">
-        <span onClick={() => setToggleLogin(!toggleLogin)}>
-          <AiOutlineClose className="register-close" />
-        </span>
-        <div className="w-[30%]">
-          <p className="login-title">Login</p>
-          <div className="login-form w-[100%]">
-            <form
-              action=""
-              className="form-login w-[100%]"
-              onSubmit={handleSubmit}
-            >
-              <div className="div mt-4">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={`${
-                    errors.email && touched.email && "errors"
-                  } border-2 border-black-300`}
-                />
-              </div>
-
-              <div className="w-[100%] flex flex-col gap-2 div mt-4">
-                <label htmlFor="">Password</label>
-                <div className="in-div relative">
-                  <input
-                    type={password ? "text" : "password"}
-                    name="password"
-                    id="password"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={`px-2 h-[40px] w-[100%] rounded-md focus:outline-none focus:border-none ${
-                      errors.password && touched.password && "errors"
-                    }`}
-                  />
-                  <span className="absolute top-[12px] right-4">
-                    {password ? (
-                      <AiOutlineEyeInvisible
-                        className="text-[#a0a0a0]"
-                        size={20}
-                        onClick={() => setPassword(!password)}
-                      />
-                    ) : (
-                      <AiOutlineEye
-                        className="text-[#a0a0a0]"
-                        size={20}
-                        onClick={() => setPassword(!password)}
-                      />
-                    )}
-                  </span>
-                </div>
-              </div>
-              <input
-                type="submit"
-                value="Login"
-                className="py-2 w-[100%] bg-teal-600 text-white text-xl mt-4 rounded-md"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="register-container"></div>;
 }
 
 export default Header;
