@@ -11,6 +11,8 @@ import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import loginShema from "../../Schema/loginShema";
 import { useNavigate } from "react-router-dom";
+import { baseurl } from "../../baseurl";
+import axios from "axios";
 
 function CLogin({ setSwitchPage, setToggle, toggle }) {
   const dispatch = useDispatch();
@@ -44,6 +46,15 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
     validationSchema: loginShema,
     onSubmit,
   });
+
+  const handleGoogle = () => {
+    try {
+      axios.post(`${baseurl}/auth/google`);
+      // navigate("/dashboard");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="flex h-[90%] w-[70%] bg-white justify-center items-center rounded-md relative">
       <span onClick={() => setToggle(!toggle)}>
@@ -133,10 +144,14 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
             </p>
           </form>
         </div>
-        <button className="flex items-center mx-auto mt-5 text-xl text-teal-600">
+        <button
+          className="flex items-center mx-auto mt-5 text-xl text-teal-600"
+          onClick={handleGoogle}
+        >
           Signin with
-          <span className="ml-2">
+          <span className="ml-2 flex items-center">
             <FcGoogle />
+            oogle
           </span>
         </button>
       </div>

@@ -8,29 +8,39 @@ import { CiImageOn } from "react-icons/ci";
 import "./CarRegistration.css";
 import carShema from "../../Schema/carRegistrationSchema";
 import { useCarRegistrationMutation } from "../../slice/mutation/authApi";
+import axios from "axios";
+import { baseurl } from "../../baseurl";
 const CarRegistration = () => {
-  const [images, setImages] = useState("");
-  const [videos, setVideos] = useState("");
+  const [images, setImages] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   const [submitCar, { isLoading, errors }] = useCarRegistrationMutation();
 
   const handleImage = (e) => {
     const files = e.target.files;
-    setImages(files);
+    setImages(...files);
   };
-  console.log(images);
+  // console.log(images);
   const handleVideo = (e) => {
     const files = e.target.files;
-    setVideos(files);
+    setVideos(...files);
   };
-  console.log(videos);
+  // console.log(videos);
   const onSubmit = async (value, actions) => {
     try {
-      const res = await submitCar({
-        ...value,
-        images: [...images],
-        videos: [...videos],
-      }).unwrap();
+      const res = await axios.post(
+        `${baseurl}/register/cars`,
+        {
+          ...value,
+          images: images,
+          videos: videos,
+        },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
     } catch (error) {
       console.log(error);
     }
@@ -52,10 +62,12 @@ const CarRegistration = () => {
       <h1 className="text-[24px] font-bold pt-5 text-teal-600">
         Car Registration
       </h1>
+
       <form
         action=""
         className="flex flex-col items-center gap-6 w-[50%] mt-5"
         onSubmit={handleSubmit}
+        encType="multipart/form-data"
       >
         <div className="left-form  w-[50%] flex flex-col my-5 800px:flex-row 800px:w-[70%] car-registraion 800px:flex-wrap justify-between gap-5">
           <div className="contain flex flex-col  mt-5 gap-2 w-[45%]">

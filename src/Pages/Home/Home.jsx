@@ -57,12 +57,12 @@ function Home() {
           Latest racing car
         </h2>
         <div className="second-section w-[85%] flex justify-between">
-          <div className="second-section-left-con w-[65%] my-5">
+          <div className="second-section-left-con w-[65%] mt-5">
             <div className="image-con h-[500px]">
               <LeaderBoard />
             </div>
-            <div className="info-title-container mt- text-center font-bold">
-              <h3 className="text-[24px]">
+            <div className="info-title-container mt- text-center font-bold mt-10">
+              <h3 className="text-[24px] pt-10">
                 Wolkwagon <table></table>he smartest choice for
                 <span className="text-teal-500 ">speed and power</span>
               </h3>
