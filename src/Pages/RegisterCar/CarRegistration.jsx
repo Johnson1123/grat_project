@@ -29,7 +29,7 @@ const CarRegistration = () => {
   const onSubmit = async (value, actions) => {
     try {
       const res = await axios.post(
-        `${baseurl}/register/cars`,
+        `${baseurl}/register/car`,
         {
           ...value,
           images: images,
