@@ -47,14 +47,14 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
     onSubmit,
   });
 
-  const handleGoogle = () => {
-    try {
-      axios.post(`${baseurl}/auth/google`);
-      // navigate("/dashboard");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  // const handleGoogle = () => {
+  //   try {
+  //     axios.get(`${baseurl}/auth/google`);
+  //     // navigate("/dashboard");
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
   return (
     <div className="flex h-[90%] w-[70%] bg-white justify-center items-center rounded-md relative">
       <span onClick={() => setToggle(!toggle)}>
@@ -144,16 +144,17 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
             </p>
           </form>
         </div>
-        <button
+        <a
           className="flex items-center mx-auto mt-5 text-xl text-teal-600"
-          onClick={handleGoogle}
+          // onClick={handleGoogle}
+          href={`${baseurl}/auth/google`}
         >
           Signin with
           <span className="ml-2 flex items-center">
             <FcGoogle />
             oogle
           </span>
-        </button>
+        </a>
       </div>
     </div>
   );

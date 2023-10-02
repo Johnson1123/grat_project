@@ -11,36 +11,36 @@ import { useCarRegistrationMutation } from "../../slice/mutation/authApi";
 import axios from "axios";
 import { baseurl } from "../../baseurl";
 const CarRegistration = () => {
-  const [images, setImages] = useState([]);
-  const [videos, setVideos] = useState([]);
+  const [images, setImages] = useState(null);
+  const [videos, setVideos] = useState(null);
 
   const [submitCar, { isLoading, errors }] = useCarRegistrationMutation();
 
   const handleImage = (e) => {
-    const files = e.target.files;
-    setImages(...files);
+    const files = e.target.files[0];
+    setImages(files);
   };
-  // console.log(images);
   const handleVideo = (e) => {
-    const files = e.target.files;
-    setVideos(...files);
+    const files = e.target.files[0];
+    setVideos(files);
   };
-  // console.log(videos);
   const onSubmit = async (value, actions) => {
     try {
-      const res = await axios.post(
-        `${baseurl}/register/car`,
-        {
-          ...value,
-          images: images,
-          videos: videos,
+      const formData = new FormData();
+      // formData.append("text", ...value);
+
+      formData.append("images", images);
+      formData.append("video", videos);
+      formData.append("engine", value.engine);
+      formData.append("generation", value.generation);
+      formData.append("make", value.make);
+      formData.append("model", value.model);
+      const res = await axios.post(`${baseurl}/register/car`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          // Authorization: `Bearer ${}`
         },
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      });
     } catch (error) {
       console.log(error);
     }

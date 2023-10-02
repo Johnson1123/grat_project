@@ -115,6 +115,28 @@ const EditProfile = () => {
               id="phone"
             />
           </div>
+          <div className="contain flex flex-col gap-2">
+            <label htmlFor="">Add Affilited Website</label>
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                className={`h-[40px] rounded-md px-2 focus:outline-none flex-1 ${
+                  websiteError ? "border-[red]" : ""
+                }`}
+                placeholder={`You can add up to ${5 - website.length} website`}
+                name="afflited"
+                id="afflited"
+                value={affilted}
+                onChange={(e) => setAffilated(e.target.value)}
+              />
+              <button
+                className="bg-slate-500  text-white rounded  px-3 self-end h-[40px]"
+                onClick={HandleAfflited}
+              >
+                Add
+              </button>
+            </div>
+          </div>
         </div>
         <div className="right-form w-[50%] flex flex-col gap-5">
           <div className="contain flex flex-col gap-2">
@@ -150,31 +172,12 @@ const EditProfile = () => {
               id="instagram"
             />
           </div>
-          <div className="contain flex flex-col gap-2">
-            <label htmlFor="">Add Affilited Website</label>
-            <input
-              type="text"
-              className={`h-[40px] rounded-md px-2 focus:outline-none ${
-                websiteError ? "border-[red]" : ""
-              }`}
-              placeholder="You can add up to 5 website"
-              name="afflited"
-              id="afflited"
-              value={affilted}
-              onChange={(e) => setAffilated(e.target.value)}
-            />
-            <button
-              className="bg-black w-[100px] text-white rounded py-1 self-end mt-3"
-              onClick={HandleAfflited}
-            >
-              Add
-            </button>
-          </div>
-          <div className="flex justify-center">
+
+          <div className="flex mt-3">
             <input
               type="submit"
-              className="mt-4 self-end min-w-[250px] bg-slate-600 py-3 px-6 text-white text-xl rounded-md"
-              value="Edit Profile"
+              className="mt-4 self-end min-w-[250px] cursor-pointer bg-slate-500 py-2 px-6 text-white text-xl rounded-md"
+              value="Update"
             />
           </div>
         </div>

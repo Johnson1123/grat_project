@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useSelectionDataMutation } from "./slice/mutation/authApi";
 import { setCarData } from "./slice/cardataSlice";
 import CarRegistration from "./Pages/RegisterCar/CarRegistration";
+import Admin from "./Pages/Dashboard/Admin/Admin_Dashboard";
 
 function App() {
   const Layout = () => {
@@ -57,6 +58,10 @@ function App() {
     {
       path: "/retrive-password/:token",
       element: <ResetPassword />,
+    },
+    {
+      path: "/admin-dashboard",
+      element: <Admin />,
     },
   ]);
   return <RouterProvider router={router}></RouterProvider>;
