@@ -10,10 +10,12 @@ import carShema from "../../Schema/carRegistrationSchema";
 import { useCarRegistrationMutation } from "../../slice/mutation/authApi";
 import axios from "axios";
 import { baseurl } from "../../baseurl";
+import { useSelector } from "react-redux";
 const CarRegistration = () => {
   const [images, setImages] = useState(null);
   const [videos, setVideos] = useState(null);
-
+  const mydata = useSelector((state) => state.auth);
+  let token = mydata.userData?.data?.token;
   const [submitCar, { isLoading, errors }] = useCarRegistrationMutation();
 
   const handleImage = (e) => {
@@ -38,7 +40,7 @@ const CarRegistration = () => {
       const res = await axios.post(`${baseurl}/register/car`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
-          // Authorization: `Bearer ${}`
+          Authorization: `Bearer ${token}`,
         },
       });
     } catch (error) {

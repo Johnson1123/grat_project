@@ -59,6 +59,27 @@ export const authApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    deleteCar: builder.mutation({
+      query: (data) => ({
+        url: `/delete/cars`,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    approveCar: builder.mutation({
+      query: (data) => ({
+        url: `/approve/cars`,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    rejectCar: builder.mutation({
+      query: (data) => ({
+        url: `/reject/cars`,
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -71,4 +92,8 @@ export const {
   useSelectionDataMutation,
   useUpdatePasswordMutation,
   useCarRegistrationMutation,
+
+  useDeleteCarMutation,
+  useRejectCarMutation,
+  useApproveCarMutation,
 } = authApiSlice;

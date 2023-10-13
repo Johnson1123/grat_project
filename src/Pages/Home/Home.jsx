@@ -8,7 +8,9 @@ import { useSelector } from "react-redux";
 import LeaderBoard from "../LeaderBoard/LeaderBoard";
 
 function Home() {
-  // const mydata = useSelector((state) => state.carData.carData);
+  // const mydata = useSelector((state) => state.auth);
+  // console.log(mydata.userData.data.token);
+
   // Convert the data to a JSON string
 
   // const jsonData = JSON.stringify(mydata, null, 2);

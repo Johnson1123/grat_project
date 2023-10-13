@@ -13,6 +13,7 @@ import loginShema from "../../Schema/loginShema";
 import { useNavigate } from "react-router-dom";
 import { baseurl } from "../../baseurl";
 import axios from "axios";
+import { setUserData } from "../../slice/authSlice";
 
 function CLogin({ setSwitchPage, setToggle, toggle }) {
   const dispatch = useDispatch();
@@ -24,8 +25,8 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
   const onSubmit = async (value, actions) => {
     try {
       const res = await login(value).unwrap();
-      await dispatch(setUserData(res));
-      setToggleLogin(false);
+      dispatch(setUserData(res));
+      // setToggleLogin(false);
     } catch (error) {
       console.log(error);
     }
