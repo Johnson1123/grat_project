@@ -20,16 +20,12 @@ const CarRegistration = () => {
   const mydata = useSelector((state) => state.auth);
   let token = mydata.userData?.data?.token;
   const [submitCar, { isLoading, errors }] = useCarRegistrationMutation();
-  const video = useSelector((state) => state.video);
+  const video = useSelector((state) => state.video.video);
   console.log(video);
 
   const handleImage = (e) => {
     const files = e.target.files[0];
     setImages(files);
-  };
-  const handleVideo = (e) => {
-    const files = e.target.files[0];
-    setVideos(files);
   };
   const onSubmit = async (value, actions) => {
     try {

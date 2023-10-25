@@ -9,8 +9,7 @@ function MyDropzone() {
   const dispatch = useDispatch();
   const onDrop = useCallback((acceptedFiles) => {
     setfile(...acceptedFiles.map((file) => URL.createObjectURL(file)));
-    console.log(acceptedFiles[0]);
-    dispatch(setVideo(acceptedFiles));
+    dispatch(setVideo(acceptedFiles[0]));
   }, []);
   const {
     getRootProps,
@@ -23,7 +22,7 @@ function MyDropzone() {
     accept: {
       "video/*": [],
     },
-    // maxSize: 1024 * 100,
+    maxSize: 1024 * 1024 * 10,
     maxFiles: 1,
   });
 
