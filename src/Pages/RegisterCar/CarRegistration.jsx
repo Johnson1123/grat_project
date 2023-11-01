@@ -15,7 +15,7 @@ import Dropzone from "react-dropzone";
 import MyDropzone from "../Dashboard/uploadVideo/Upload";
 
 const CarRegistration = () => {
-  const [images, setImages] = useState(null);
+  const [images, setImages] = useState([]);
   const [videos, setVideos] = useState(null);
   const mydata = useSelector((state) => state.auth);
   let token = mydata.userData?.data?.token;
@@ -24,15 +24,16 @@ const CarRegistration = () => {
   console.log(video);
 
   const handleImage = (e) => {
-    const files = e.target.files[0];
+    const files = e.target.files;
     setImages(files);
   };
   const onSubmit = async (value, actions) => {
     try {
       const formData = new FormData();
-      // formData.append("text", ...value);
 
-      formData.append("images", images);
+      for (const file of images) {
+        formData.append("images", file);
+      }
       formData.append("engine", value.engine);
       formData.append("generation", value.generation);
       formData.append("make", value.make);
