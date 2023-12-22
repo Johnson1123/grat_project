@@ -1,0 +1,132 @@
+/* Media screen for List Car */
+@media screen and  (max-width:768px) {
+
+    .admin-home{
+        min-width: 100%;
+        text-align: center;
+        overflow-x: auto;
+    }
+    .list{
+    min-width: 200%;
+
+    }
+
+    .car-statistics{
+        min-width: 200%;
+    }
+
+    .car-statistics p{
+        width: 100%;
+        font-size: 18px;
+        font-family: poppins, sans-serif;
+    }
+
+    .list-container p{
+        width:100%;
+        font-size: 15px;
+        /* text-align: center; */
+    }
+
+    .image-list{
+        border-radius: 50%; 
+        min-width: 50px;
+        min-height: 50px;
+    }
+    .image-list img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-list{
+        min-width:9%;
+        margin:0  5px;
+    }
+
+}
+@media screen and  (max-width:500px) {
+
+    .admin-home{
+        min-width: 100%;
+        text-align: center;
+        overflow-x: auto;
+    }
+    .list{
+        min-width: 200%;
+    }
+
+    .car-statistics{
+        min-width: 200%;
+    }
+
+    .car-statistics p{
+        width: 100%;
+        font-size: 18px;
+        font-family: poppins, sans-serif;
+    }
+    
+    .list-container p{
+        width:100%;
+        font-size: 15px;
+        /* text-align: center; */
+    }
+
+    .image-list{
+        border-radius: 50%; 
+        min-width: 50px;
+        min-height: 50px;
+    }
+    .image-list img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-list{
+        min-width:9%;
+        margin:0  5px;
+    }
+
+}
+@media screen and  (max-width:400px) {
+
+    .admin-home{
+        min-width: 100%;
+        text-align: center;
+        overflow-x: auto;
+    }
+    .list{
+        min-width: 200%;
+      
+    }
+
+    .car-statistics{
+        min-width: 200%;
+    }
+
+    .car-statistics p{
+        width: 100%;
+        font-size: 18px;
+        font-family: poppins, sans-serif;
+    }
+    
+    .list-container p{
+        width:100%;
+        font-size: 15px;
+        /* text-align: center; */
+    }
+
+    .image-list{
+        border-radius: 50%; 
+        min-width: 50px;
+        min-height: 50px;
+    }
+    .image-list img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-list{
+        min-width:9%;
+        margin:0  5px;
+    }
+
+}

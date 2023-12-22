@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Statistic.css'
 import { FaArrowDown } from "react-icons/fa";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut, Pie } from "react-chartjs-2";
@@ -21,7 +22,7 @@ function Statistic() {
     ],
   };
   return (
-    <div className="p-5 bg-[#f7f7f7] h-[100%] flex flex-col">
+    <div className="p-5 bg-[#f7f7f7] h-[100%] flex flex-col statistic-container">
       <div className="date-sec">
         <h2 className="text-[22px] font-bold text-[teal]">Today Statistics</h2>
         <p className="text-[14px]">
@@ -33,7 +34,7 @@ function Statistic() {
       </div>
       <div
         className="first-box min-h-[100px] min-w-[80%]  p-3 mt-7 rounded-2xl bg-white"
-        style={{ boxShadow: "0px 0 0px 5px #f3f3f3" }}
+        
       >
         <div className="flex justify-between">
           <p className="font-bold text-[16px] text-[teal]">Register</p>
@@ -61,7 +62,7 @@ function Statistic() {
       </div>
       <div
         className="first-box min-h-[100px] min-w-[80%]  p-5 mt-7 rounded-2xl bg-white"
-        style={{ boxShadow: "0px 0 0px 5px #f3f3f3" }}
+
       >
         <div className="flex justify-between">
           <p className="font-bold text-[16px] text-[teal]">Approved</p>

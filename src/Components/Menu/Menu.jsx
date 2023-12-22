@@ -133,9 +133,9 @@ function Menu() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center menu-header">
       <div className="inner-div w-[85%] bg-teal-500 rounded-md py-4">
-        <div className="flex items-center bg-white w-full px-2 py-1 cursor-pointer  relative">
+        <div className="flex items-center bg-white w-full px-2 py-1 cursor-pointer  relative menu-container">
           <button
             className="hover:text-teal-400 flex items-center"
             onClick={() => {

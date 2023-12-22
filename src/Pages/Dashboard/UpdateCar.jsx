@@ -2,7 +2,7 @@
 
 import { AiFillCamera, AiOutlineClose } from "react-icons/ai";
 import { RxVideo } from "react-icons/rx";
-
+import "../../Pages/Dashboard/CarsList.css";
 import { useFormik } from "formik";
 import { useState } from "react";
 
@@ -24,8 +24,8 @@ const UpdateCar = ({ toggle, setToggle }) => {
   // const imageUrl = window.URL.createObjectURL(values.image);
   const [image, setImage] = useState(values.image);
   return (
-    <div className=" h-[100%] flex justify-center items-center flex-col w-[100%]  fixed top-0 left-0 bg-[#00000087]">
-      <div className=" h-[95%] flex-col w-[80%] flex justify-center items-center rounded-md bg-white relative">
+    <div className=" updatecar-cont h-[100%] flex justify-center items-center flex-col w-[100%]  fixed top-0 left-0 bg-[#00000087]">
+      <div className=" h-[95%] flex-col w-[80%] flex justify-center items-center rounded-md bg-white relative updatecar-header">
         <button
           className="absolute right-5 top-5"
           onClick={() => setToggle(!toggle)}

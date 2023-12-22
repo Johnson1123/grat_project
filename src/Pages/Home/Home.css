@@ -1,0 +1,100 @@
+/* Media screen for Home */
+@media screen and (max-width:768px) {
+
+    .upper-banner .upper-banner-inner{
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+        width:100%;
+        background-color: transparent;
+        margin: 0 10px;
+        padding:10px;
+        height: auto;
+    }
+
+
+    .upper-banner-inner span{
+        font-size: 17px;
+    }
+
+    .info-container{
+        margin-bottom: 15px;
+    }
+
+    .wolkwagon{
+        margin-bottom: 15px;
+    }
+    .upper-banner-right-con img{
+        width:40%;
+        height:100px;
+        object-fit: cover;
+    }
+
+    .second-section h2{
+        font-size: 25px;
+        font-family: poppins, sans-serif;
+        text-align: center;
+    }
+
+    .second-section-leaderboard{
+        display: flex;
+        margin: 0;
+        z-index: -222;
+        padding: 0;
+        flex-wrap: wrap;
+        min-width: 100%;
+        flex-direction: row;
+    
+    }
+
+    .image-con{
+        width: 100%;
+        height: 20%;
+        padding: 0.5em;
+
+    }
+
+    .second-section .second-section-left-con{
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 222;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+   
+    .latest{
+        width: 100%;
+        text-align: center;
+        }
+
+        .second-section-left-con{
+            width: 100%;
+        }
+        .info-title-container{
+            width: 100%;
+            text-align: center;
+        }
+
+        .second-section-right-con .newscar{
+            text-align: center;
+            margin: auto;
+            font-size: 25px;
+        }
+
+        .second-section-right-con {
+            min-width: 100%;
+            margin-top: 20px;
+        }
+        
+        .blog-btn{
+            width: 100%;
+            padding: 20px ;
+        }
+
+    
+    
+   
+  
+    
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { images } from "../../assets";
+import "./Footer.css";
 import {
   BsFacebook,
   BsInstagram,
@@ -12,19 +13,19 @@ function Footer() {
   return (
     <footer className="mt-5">
       <div className="footer-header px-10 py-2 bg-slate-300 flex justify-center items-center">
-        <p className="text-lg w-[200px] text-slate-800">
+        <p className="text-lg w-[200px] text-slate-800 newLetter">
           Sign up for our week newsletter of latest car
         </p>
-        <form action="" className="flex">
+        <form action="" className="flex form-address">
           <input
             type="text"
-            placeholder="email"
+            placeholder="Enter Email Address"
             className="h-[45px] w-[400px] rounded-md px-3 outline-none"
             name=""
             id=""
           />
-          <button className="bg-blue-500 px-5 h-[45px] text-white text-lg">
-            Sign Up
+          <button className="bg-blue-500  px-5 h-[45px] text-white text-lg">
+            Register
           </button>
         </form>
       </div>
@@ -35,11 +36,11 @@ function Footer() {
             alt=""
             className="w-[150px] h-[50px] rounded-md"
           />
-          <p classNa me="flex items-center gap-5">
+          <div className="flex items-center gap-5 socialMedia">
             <BsTelephoneX size={20} className="text-white" />
             <span className="text-white">+1 7689879309</span>
-          </p>
-          <div className="flex gap-4 mt-3">
+          </div>
+          <div className="flex gap-4 mt-3 socialIcon">
             <span>
               <a href="">
                 <BsFacebook size={20} className="text-white" />
@@ -84,7 +85,7 @@ function Footer() {
             </li>
             <li className="py-3 border-b-2 border-slate-5   00">
               <a href="" className="text-slate-300 cursor-pointer">
-                Prolicy
+                Policy
               </a>
             </li>
             <li className="py-3 border-b-2 border-slate-5   00">
@@ -116,7 +117,7 @@ function Footer() {
             </li>
             <li className="py-3 border-b-2 border-slate-5   00">
               <a href="" className="text-slate-300 cursor-pointer">
-                Prolicy
+                Policy
               </a>
             </li>
             <li className="py-3 border-b-2 border-slate-5   00">
@@ -148,7 +149,7 @@ function Footer() {
             </li>
             <li className="py-3 border-b-2 border-slate-5   00">
               <a href="" className="text-slate-300 cursor-pointer">
-                Prolicy
+                Policy
               </a>
             </li>
             <li className="py-3 border-b-2 border-slate-5   00">

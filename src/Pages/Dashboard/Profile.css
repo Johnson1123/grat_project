@@ -1,0 +1,16 @@
+
+/* Media screen for Profile */
+
+@media screen and (max-width:768px){
+
+    .profile-cont{
+        padding: 2em;
+    }
+
+    .profile-details{
+        text-align: center;
+        display: flex;
+        padding: 1em;
+        justify-content: center;
+    }
+}

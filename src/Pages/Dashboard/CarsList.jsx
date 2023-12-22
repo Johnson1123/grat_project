@@ -1,5 +1,6 @@
 import axios from "axios";
 // import "../../Pages/Dashboard/Dashboard.css";
+import "../../Pages/Dashboard/CarsList.css";
 import { BiLogoTwitter } from "react-icons/bi";
 import { BiLogoFacebook } from "react-icons/bi";
 import { BiLogoLinkedin } from "react-icons/bi";
@@ -42,11 +43,11 @@ function CarsList({ toggle, setToggle, view, setView }) {
     },
   ];
   return (
-    <div className="w-[100%] p-5">
+    <div className="w-full p-5 gen-container">
       <div class="relative agent-list-con">
-        <p class="dashbord-title text-2xl font-bold">List Of Cars</p>
+        <p class="dashbord-title text-2xl font-bold">List Of Cars</p> <br />
 
-        <div className="flex my-5">
+        <div className="flex my-5 agent-list-tables">
           <p className="w-[7%] text-center text-sm font-[500]">Image</p>
           <p className="w-[13%] text-center  text-sm font-[500]">Name</p>
           <p className="w-[10%] truncate  text-center text-sm font-[500]">
@@ -60,9 +61,9 @@ function CarsList({ toggle, setToggle, view, setView }) {
           </p>
           <p className="w-[20%] text-center text-sm font-[500]">Social media</p>
 
-          <p className="w-[25%] text-center text-sm font-[500] ">Actions</p>
+          <p className="w-[25%] text-center text-sm font-[500] " id="actions">Actions</p>
         </div>
-
+        <div className="gencontainer">
         {agent &&
           agent.map((agent, index) => {
             return (
@@ -70,7 +71,7 @@ function CarsList({ toggle, setToggle, view, setView }) {
                 <div className="agent-box-container ">
                   <div className="dashbord-agent-box flex items-center">
                     <div className="image-con w-[7%]">
-                      <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
+                      <div className="w-[50px] h-[50px] rounded-full overflow-hidden img-div">
                         <img
                           src={images.racing}
                           alt=""
@@ -79,16 +80,16 @@ function CarsList({ toggle, setToggle, view, setView }) {
                       </div>
                     </div>
 
-                    <div className="name-con w-[13%] truncate">
+                    <div className="name-con w-[13%]">
                       <p class="name text-sm">{agent.name}</p>
                     </div>
-                    <div className="name-con w-[13%] truncate">
+                    <div className="name-con w-[13%]">
                       <p class="name text-sm ">{agent.model}</p>
                     </div>
-                    <div className="name-con w-[10%] truncate">
+                    <div className="name-con w-[10%]">
                       <p class="name text-sm ">{agent.year}</p>
                     </div>
-                    <div className="name-con w-[13%] truncate">
+                    <div className="name-con w-[13%] ">
                       <p class="name text-sm ">{agent.engine}</p>
                     </div>
 
@@ -123,7 +124,7 @@ function CarsList({ toggle, setToggle, view, setView }) {
                       </span>
                     </div>
 
-                    <div className="w-[25%]">
+                    <div className="w-[25%] socialmedia">
                       <button
                         type="submit"
                         onClick={() => setView(!view)}
@@ -136,7 +137,7 @@ function CarsList({ toggle, setToggle, view, setView }) {
                         onClick={() => setToggle(!toggle)}
                         className="bg-[green] text-white py-2 px-3 rounded-md mx-2 text-sm"
                       >
-                        Add time
+                        Addtime
                       </button>
                       <button
                         type="submit"
@@ -153,6 +154,7 @@ function CarsList({ toggle, setToggle, view, setView }) {
           })}
       </div>
     </div>
+  </div>
   );
 }
 

@@ -2,3 +2,62 @@
   background-color: #dffbfe;
   height: 45px;
 }
+
+.upload-container{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+/*  Media Screen for car registration */
+@media screen and (max-width:768px){
+  
+  .carCont .car-registraion{
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 9px;
+    height: auto;
+  }
+
+  .carCont h1{
+    font-size:27px;
+  }
+
+  .carCont form{
+  width:80%;
+    margin-top: 1px;
+  }
+
+  .car-registraion .contain{
+   width: 100%;
+    /* margin-top: 10px; */
+    /* padding: 2px; */
+  }
+
+  .car-registraion .contain label{
+    text-align: left;
+  }
+
+  .car-registraion .contain input{
+    width:100%;
+    margin: 0;
+    height:45px;
+    text-align: center;
+  }
+ 
+  .uploadCar{
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+  
+  .upload-container{
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+}

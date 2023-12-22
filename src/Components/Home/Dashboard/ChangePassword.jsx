@@ -7,6 +7,7 @@ import { useUpdatePasswordMutation } from "../../../slice/mutation/authApi";
 import { updatePasswordSchema } from "../../../Schema/loginShema";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
+import './ChangePassword.css'
 
 const ChangePassword = () => {
   const dispatch = useDispatch();
@@ -41,14 +42,14 @@ const ChangePassword = () => {
   });
 
   return (
-    <div className="w-[100%] h-[100%] flex justify-center items-center flex-col">
+    <div className="w-[100%] h-[100%] flex justify-center items-center flex-col changeP-cont">
       <h2 className="text-[24px] font-bold my-4">Change your Password</h2>
       <form
         action=""
         className="w-[50%] flex justify-center items-center flex-col gap-4 mt-4"
         onSubmit={handleSubmit}
       >
-        <div className="w-[80%] flex flex-col gap-2">
+        <div className="w-[80%] flex flex-col gap-2 input-psw">
           <label htmlFor="">Old Password</label>
           <div className="in-div relative">
             <input
@@ -76,7 +77,7 @@ const ChangePassword = () => {
             </span>
           </div>
         </div>
-        <div className="w-[80%] flex flex-col gap-2">
+        <div className="w-[80%] flex flex-col gap-2 input-psw">
           <label htmlFor="">New Password</label>
           <div className="in-div relative">
             <input
@@ -104,7 +105,7 @@ const ChangePassword = () => {
             </span>
           </div>
         </div>
-        <div className="w-[80%] flex flex-col gap-2">
+        <div className="w-[80%] flex flex-col gap-2 input-psw">
           <label htmlFor="">Confirm Password</label>
           <div className="in-div relative">
             <input
@@ -133,7 +134,7 @@ const ChangePassword = () => {
           </div>
         </div>
         <button
-          className="bg-slate-600 px-5 py-3 rounded-md text-white mt-4"
+          className="bg-slate-600 px-5 py-3 rounded-md text-white mt-4 btn-psw"
           type="submit "
         >
           Change Password

@@ -1,4 +1,5 @@
 import React from "react";
+import './Profile.css'
 const agent = {
   name: "Johnson",
   phone: "09076524078",
@@ -12,7 +13,7 @@ const agent = {
 };
 const Profile = () => {
   return (
-    <div className="w-[100%] pl-10 mt-5 flex flex-col items-center">
+    <div className="w-[100%] pl-10 mt-5 flex flex-col items-center profile-cont">
       <div className="profile-img w-[150px] h-[150px] overflow-hidden">
         <img
           src={agent.image}

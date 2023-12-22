@@ -32,7 +32,7 @@ function Header() {
             <form action="">
               <input type="text" />
             </form>
-            <button className="px-4 btn-search">Search</button>
+            <button className="  px-3 btn-search">Search</button>
           </div>
           {user ? (
             <button
@@ -53,7 +53,7 @@ function Header() {
                   setSwitchPage(1);
                 }}
               >
-                register
+                Register
               </button>
               <button
                 className="px-4 btn-auth login"
@@ -67,9 +67,9 @@ function Header() {
             </div>
           )}
 
-          <span className="header-bar">
+          {/* <span className="header-bar">
             <FaBars />
-          </span>
+          </span> */}
         </div>
       </div>
       {toggle && (

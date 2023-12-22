@@ -57,11 +57,12 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
   //   }
   // };
   return (
-    <div className="flex h-[90%] w-[70%] bg-white justify-center items-center rounded-md relative">
-      <span onClick={() => setToggle(!toggle)}>
-        <AiOutlineClose className="register-close" />
+    <>
+      <div className="login-container flex  w-[70%] bg-white justify-center items-center rounded-md relative">
+      <span onClick={() => setToggle(!toggle)} >
+        <AiOutlineClose className="register-close times" />
       </span>
-      <div className="w-[30%]">
+      <div className="w-[30%] login-header">
         <p className="login-title text-[24px] font-bold text-center text-teal-600">
           Login
         </p>
@@ -118,7 +119,7 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
               </div>
             </div>
             <div className="mt-5 flex justify-between px-2">
-              <div className="flex items-center">
+              <div className="flex items-center remember">
                 <input type="checkbox" id="remember" />
                 <label htmlFor="remember" className="text-teal-600 ml-2">
                   Remember me
@@ -146,7 +147,7 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
           </form>
         </div>
         <a
-          className="flex items-center mx-auto mt-5 text-xl text-teal-600"
+          className="flex items-center mx-auto mt-5 text-xl text-teal-600 google"
           // onClick={handleGoogle}
           href={`${baseurl}/auth/google`}
         >
@@ -158,6 +159,8 @@ function CLogin({ setSwitchPage, setToggle, toggle }) {
         </a>
       </div>
     </div>
+    </>
+  
   );
 }
 

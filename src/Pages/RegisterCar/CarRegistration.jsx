@@ -60,10 +60,10 @@ const CarRegistration = () => {
   });
 
   return (
-    <div className="flex justify-center items-center h-[100%] flex-col py-10">
-      <h1 className="text-[24px] font-bold pt-5 text-teal-600">
+    <div className="flex justify-center items-center h-[100%] flex-col py-10 carCont">
+      <h2 className="text-[24px] font-bold pt-5 text-teal-600">
         Car Registration
-      </h1>
+      </h2>
 
       <form
         action=""
@@ -120,36 +120,40 @@ const CarRegistration = () => {
               id="generation"
             />
           </div>
-          <div className="contain flex items-center mt-5  gap-2 w-[45%]">
-            <label htmlFor="video">
-              <MdSlowMotionVideo size={50} className=" text-slate-400" />
-            </label>
-            <input
-              type="file"
-              accept="video/*"
-              multiple
-              className="h-[40px] rounded-md px-2 focus:outline-none"
-              onChange={handleVideo}
-              name="video"
-              id="video"
-              hidden
-            />
-            <p>Video</p>
-          </div>
-          <div className="contain flex items-center  gap-2 mt-5 w-[45%]">
-            <label htmlFor="image">
-              <CiImageOn size={50} className=" text-slate-400" />
-            </label>
-            <input
-              type="file"
-              multiple
-              className="h-[40px] rounded-md px-2 focus:outline-none"
-              onChange={handleImage}
-              name="image"
-              id="image"
-              hidden
-            />
-            <p>Picture</p>
+
+          <div className="upload-container">
+            <div className="contain flex items-center mt-5  gap-2 w-[45%] uploadCar">
+              <label htmlFor="video">
+                <MdSlowMotionVideo size={50} className=" text-slate-400" />
+              </label>
+              <input
+                type="file"
+                accept="video/*"
+                multiple
+                className="h-[40px] rounded-md px-2 focus:outline-none"
+                onChange={handleVideo}
+                name="video"
+                id="video"
+                hidden
+              />
+              <p>Video</p>
+            </div>
+            <div className="contain flex items-center  gap-2 mt-5 w-[45%] uploadCar">
+              <label htmlFor="image">
+                <CiImageOn size={50} className=" text-slate-400" />
+              </label>
+              <input
+                type="file"
+                multiple
+                className="h-[40px] rounded-md px-2 focus:outline-none"
+                onChange={handleImage}
+                name="image"
+                id="image"
+                hidden
+              />
+              <p>Picture</p>
+            </div>
+
           </div>
         </div>
         <div className="flex justify-center">

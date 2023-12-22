@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import React, { useState } from "react";
+import './ResetPassword.css';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { forgetSchema } from "../../Schema/loginShema";
 import {
@@ -42,8 +43,8 @@ function ResetPassword() {
   });
 
   return (
-    <div className="h-[100vh] w-[100%] flex justify-center items-center">
-      <div className="w-[30%]">
+    <div className="reset-container h-[100vh] w-[100%] flex justify-center items-center">
+      <div className="w-[30%] reset-form">
         <p className="login-title text-[24px] font-bold text-center">
           Reset password
         </p>
@@ -124,7 +125,7 @@ function ResetPassword() {
             <input
               type="submit"
               value="Submit"
-              className="py-2 w-[100%] bg-teal-600 text-white text-xl mt-5 rounded-md"
+              className="btn-reset py-2 w-[100%] bg-teal-600 text-white text-xl mt-5 rounded-md"
             />
           </form>
         </div>

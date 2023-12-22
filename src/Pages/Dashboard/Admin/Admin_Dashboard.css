@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Media screen for Admin_Dashboard */
+
+@media screen and   (max-width:768px) {
+
+    .admin-dashboard{
+       width: 100%;
+        display: flex;
+        height:auto;
+        flex-wrap: wrap;
+    }
+
+    .aside{
+        min-width: 100%;
+    }
+
+    .statictics{
+        min-width: 100%;
+    }
+
+    .admin{
+        width: 100%;
+     
+    }
+}
+
+

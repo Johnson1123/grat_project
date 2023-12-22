@@ -2,6 +2,7 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoNotificationsOutline } from "react-icons/io5";
 import List from "./List";
+import './Admin_home.css'
 
 function Admin_home() {
   const data = [
@@ -128,8 +129,9 @@ function Admin_home() {
   ];
 
   return (
-    <div className="w-[100%] p-5 bg-[rgb(240,240,240)] h-[100%] ">
-      <div className="flex items-center justify-end gap-5">
+    
+    <div className="w-[100%] p-5 bg-[rgb(240,240,240)] h-[100%]">
+      <div className="flex items-center justify-end gap-5 bell-msg">
         <div className="notification relative" style={{ width: "30px" }}>
           <IoNotificationsOutline size={30} />
           <span className="absolute flex justify-center items-center text-[10px] text-white bg-red-600 h-[15px] w-[15px] rounded-full top-0 right-0">
@@ -146,7 +148,8 @@ function Admin_home() {
           <CiSearch size={25} className="cursor-pointer" />
         </div>
       </div>
-      <div className="flex justify-between p-3 bg-teal-900 items-center mt-5 text-white">
+      <div className="admin-home">
+      <div className="flex justify-between p-3 bg-teal-900 items-center mt-5 text-white car-statistics">
         <p className="w-[7%] truncate">No.</p>
         <p className="w-[15%] truncate">Owner</p>
         <p className="w-[10%] truncate">Name</p>
@@ -157,10 +160,11 @@ function Admin_home() {
         <p className="w-[10%] truncate">Action</p>
         <p className="w-[10%] truncate">Action</p>
       </div>
-      <div className="h-[85%] overflow-y-scroll no-scrollbar">
+      <div className="h-[85%] overflow-y-scroll no-scrollbar list">
         {data.map((item, i) => {
           return <List data={item} />;
         })}
+      </div>
       </div>
     </div>
   );

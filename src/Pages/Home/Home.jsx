@@ -1,5 +1,6 @@
 import React from "react";
 import { images } from "../../assets";
+import './Home.css';
 import BlogBox from "../../Components/Home/BlogBox";
 import InfoBox from "../../Components/Home/InfoBox";
 import Menu from "../../Components/Menu/Menu";
@@ -55,16 +56,16 @@ function Home() {
       {/* second section */}
 
       <div className="second-section mt-10 w-[100%] flex flex-col items-center justify-center">
-        <h2 className="text-[30px] font-bold text-[brown] w-[85%]">
+        <h2 className="text-[30px] font-bold text-[brown] w-[85%] latest">
           Latest racing car
         </h2>
-        <div className="second-section w-[85%] flex justify-between">
+        <div className="second-section-leaderboard w-[85%] flex justify-between ">
           <div className="second-section-left-con w-[65%] mt-5">
             <div className="image-con h-[500px]">
               <LeaderBoard />
             </div>
             <div className="info-title-container mt- text-center font-bold mt-10">
-              <h3 className="text-[24px] pt-10">
+              <h3 className="text-[24px] pt-10 wolkwagon">
                 Wolkwagon <table></table>he smartest choice for
                 <span className="text-teal-500 ">speed and power</span>
               </h3>
@@ -76,16 +77,16 @@ function Home() {
 
           {/* blog */}
           <div className="second-section-right-con w-[25%]">
-            <div className="mb-3">
-              <span className="text-[24px]  text-slate-600">
+            <div className="mb-8 newscar">
+              <span className="text-[24px]  text-slate-600 newscar">
                 News and Lastest Post
               </span>
             </div>
-            <div className="flex flex-wrap flex-col gap-2">
+            <div className="flex flex-wrap flex-col gap-2 wrapBox">
               <BlogBox />
               <BlogBox />
               <BlogBox />
-              <button className="py-3 mt-5 rounded-md text-lg w-[100%] bg-slate-500 text-white">
+              <button className="blog-btn py-3 mt-5 rounded-md text-lg w-[100%] bg-slate-500 text-white">
                 Go my blog
               </button>
             </div>

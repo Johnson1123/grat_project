@@ -1,5 +1,6 @@
 import React from "react";
 import { images } from "../../../../assets";
+import './Admin_home.css'
 import {
   useApproveCarMutation,
   useDeleteCarMutation,
@@ -37,9 +38,10 @@ function List({ data }) {
     }
   };
   return (
-    <div className="flex justify-between p-3 rounded-md bg-slate-200 items-center mt-3">
+    <div className="all-div">
+         <div className="flex justify-between p-3 rounded-md bg-slate-200 items-center mt-3 list-container">
       <p className="w-[7%] truncate">{data.id}</p>
-      <div className="flex gap-2 items-center w-[15%] truncate">
+      <div className="flex gap-2 items-center w-[15%] truncate image-list">
         <img
           src={images.car2}
           alt=""
@@ -51,7 +53,7 @@ function List({ data }) {
       <p className="w-[10%] truncate">{"Audi"}</p>
       <p className="w-[12%] truncate">{"Electrice engine"}</p>
 
-      <p className="flex items-center justify-start gap-2  w-[10%] truncate">
+      <p className="flex items-center justify-start gap-2  w-[1%] truncate">
         <span
           className={`h-[10px] w-[10px] ${
             data?.status === "rejected"
@@ -85,6 +87,8 @@ function List({ data }) {
         <Reject id={data.id} handle={handleReject} />
       ) : null}
     </div>
+    </div>
+ 
   );
 }
 
@@ -92,7 +96,7 @@ export default List;
 
 function View() {
   return (
-    <button className="bg-[#7e7e7e] px-3 py-1 rounded-md text-white w-[8%] truncate">
+    <button className="bg-[#7e7e7e] px-3 py-1 rounded-md text-white w-[8%] truncate btn-list">
       View
     </button>
   );
@@ -100,7 +104,7 @@ function View() {
 function Delete({ id, handle }) {
   return (
     <button
-      className="bg-red-600 px-3 py-1 rounded-md w-[10%] truncate text-white"
+      className="bg-red-600 px-3 py-1 rounded-md w-[10%] truncate text-white btn-list"
       onClick={() => handle(id)}
     >
       Delete
@@ -110,7 +114,7 @@ function Delete({ id, handle }) {
 function Approve({ id, handle }) {
   return (
     <button
-      className="bg-[green] px-3 py-1 rounded-md w-[10%] truncate text-white"
+      className="bg-[green] px-3 py-1 rounded-md w-[10%] truncate text-white btn-list"
       onClick={() => handle(id)}
     >
       Approve
@@ -120,7 +124,7 @@ function Approve({ id, handle }) {
 function Reject({ id, handle }) {
   return (
     <button
-      className="bg-[#171242] px-3 py-1 rounded-md text-white"
+      className="bg-[#171242] px-3 py-1 rounded-md text-white btn-list"
       onClick={() => handle(id)}
     >
       Rejected

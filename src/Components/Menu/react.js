@@ -47,6 +47,3 @@ const setErrorMessage = stateData[1];
     </form>
 
   );
-
-};
-

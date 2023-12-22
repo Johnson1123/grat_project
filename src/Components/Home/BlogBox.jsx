@@ -1,9 +1,10 @@
 import React from "react";
 import { images } from "../../assets";
+import './BlogBox.css';
 
 function BlogBox() {
   return (
-    <div className="max-w-[350px] flex flex-col justify-center items-center overflow-hidden py-4 px-4 shadow-lg rounded-lg">
+    <div className="max-w-[350px] flex flex-col justify-center items-center overflow-hidden py-4 px-4 shadow-lg rounded-lg blogBox">
       <div className="img-con w-[100%] h-[150px] object-cover">
         <img src={images.racing} alt="" className="w-[100%] h-[100%] " />
       </div>

@@ -1,0 +1,118 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard-aside{
+    width: 18%;
+    border-radius: 0 20px 20px 0;
+    height: 100vh;
+    padding: 30px;
+}
+
+.main{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+.right-form{
+     width: 50%;
+   
+ } 
+
+/* Media screen for dashboard */
+@media screen and (max-width:768px){
+      /*All media screen begining  of  dashboard-aside */
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .dashboard-aside{
+        width: 100%;
+        display: flex;
+        border-radius: 0;
+        padding: 30px;
+        justify-content: center;
+        height:100%;
+    }
+    /* end of  dashboard-aside */
+
+    /* Media screen for Edit-Profile */ /*begining */
+    .profile-container{
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+    }
+
+ .left-form{
+        margin: 20px 0;
+        padding: 10px;
+        min-width:128%;
+    } 
+
+    .right-form{
+       min-width:120%;
+        margin: 20px 0;
+        padding: 1px;
+    } 
+
+    .affliate-cont{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: block;
+    }
+
+  .contain  .btn-add{
+        width: 60%;
+        margin: 2em 0;
+        display: block;
+    }
+
+    .right-form .btn-update input[type=submit]{
+        padding: 7px 30px;
+        height: auto;
+        display: block;
+        margin:20px auto;
+        min-width: 0;
+        text-align: center;
+        width: 60%;
+       
+    }  
+
+    .edit-image{
+        margin-top: 40px;
+    }
+
+    /* Media screen for Edit-Profile */ /*End */
+    /*All media screen  ending of dashboard media screen */
+}
+
+@media screen and (max-width:765px) {
+    .affliate-cont{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: block;
+    }
+
+  .contain  .btn-add{
+        width: 100%;
+        margin: 2em 0;
+        display: block;
+    }
+
+
+    
+}

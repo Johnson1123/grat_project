@@ -1,5 +1,6 @@
 import React from "react";
 import { images } from "../../assets";
+import './App.css';
 import {
   BsFacebook,
   BsInstagram,
@@ -10,7 +11,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="mt-5">
+    <footer className="mt-5 footCont">
       <div className="footer-header px-10 py-2 bg-slate-300 flex justify-center items-center">
         <p className="text-lg w-[200px] text-slate-800">
           Sign up for our week newsletter of latest car

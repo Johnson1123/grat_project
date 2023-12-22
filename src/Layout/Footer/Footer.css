@@ -1,0 +1,167 @@
+/* Media Screen footer*/
+@media screen and (max-width:768px) {
+
+    .footer-header{
+        flex-wrap: wrap;
+        justify-content: space-around;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-header form{
+        padding:10px;
+        margin: 0 10px;
+        display: flex;
+        min-width: 100%;
+        align-items: center;
+    }
+
+    .footer-header input{
+        width:100%;
+        padding:15px;
+        height:auto;
+        font-size: 17px;
+}
+
+.footer-header form button{
+    padding:15px 25px;
+    font-size: 15px;
+    height: auto;
+    margin: 20px 5px;
+    text-align: center;
+    border-radius:2px;
+}
+
+   .footer-header .newLetter{
+        width: 100%;
+        margin-top: 30px;
+        padding:10px;
+        font-size: 14px;
+    }
+
+    .lower-footer{
+        background-color: none;
+        flex-wrap: wrap;
+        padding:7px;
+        flex-direction: row;
+        width:100%;
+    }
+
+    .lower-footer img{
+        width:100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        /* height:80px; */
+    }
+    
+    .footer-box{
+        width:35%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding:0px;
+    }
+
+    .footer-box h3{
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.633);
+        text-align: center;
+       
+    }
+
+    .footer-box ul li {
+        font-size: 16px;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.27);
+        text-align: center;
+    }
+}
+
+/* Media Screen footer*/
+@media screen and (max-width:500px) {
+
+    .footer-header{
+        flex-wrap: wrap;
+        justify-content: space-around;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-header form{
+        padding:0;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        min-width: 118%;
+    }
+
+
+    .footer-header input{
+        width: 100%;
+        padding:10px;
+        height: auto;
+        font-size: 17px;
+}
+
+.footer-header form button{
+    padding:10px 25px;
+    font-size: 15px;
+    height: auto;
+    margin: 20px 0;
+    text-align: center;
+}
+
+   .footer-header .newLetter{
+        width: 100%;
+        margin-top: 30px;
+        padding:10px;
+        font-size: 14px;
+    }
+
+    .lower-footer{
+        background-color: none;
+        flex-wrap: wrap;
+        padding: 7px;
+        flex-direction: row;
+        width:100%;
+    }
+
+    .lower-footer img{
+        width:50%;
+        margin: 10px auto;
+        height:50px;
+        object-fit: cover;
+    }
+
+    .socialMedia{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .socialIcon{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .footer-box{
+        width:100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding:0px;
+    }
+
+    .footer-box h3{
+        font-size: 18px;
+        text-align: center;
+       
+    }
+
+    .footer-box ul li {
+        font-size: 16px;
+        text-align: center;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.27);
+    }
+}
+
+

@@ -1,7 +1,7 @@
 // import "../../Pages/Dashboard/Dashboard.css";
 
 import { AiFillCamera } from "react-icons/ai";
-
+import "../../Pages/Dashboard/CarsList.css";
 import { useFormik } from "formik";
 import { useState } from "react";
 

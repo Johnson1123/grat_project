@@ -52,7 +52,7 @@ function CRegister({ toggle, setToggle, setSwitchPage }) {
     <div className="register-container">
       <div className="reg-inner">
         <span onClick={() => setToggle(!toggle)}>
-          <AiOutlineClose className="register-close" />
+          <AiOutlineClose className="register-close times" />
         </span>
         <div className="left-con">
           <img src={images.racing} alt="" />

@@ -1,4 +1,5 @@
 import React from "react";
+import './Aside.css'
 import { BiLogOutCircle } from "react-icons/bi";
 import { FcApproval, FcDisapprove } from "react-icons/fc";
 import { TbProgressCheck } from "react-icons/tb";
@@ -10,13 +11,13 @@ import { SiPagespeedinsights } from "react-icons/si";
 
 function Aside() {
   return (
-    <div className="h-full w-[100%] flex flex-col bg-black justify-between">
+    <div className="h-full w-[100%] flex flex-col bg-black justify-between aside-dashboard">
       <div className="first-con">
         <Link to="/">
-          <img src={images.logo} alt="" className="w-[200px] py-5" />
+            <img src={images.logo} alt="" className="w-[200px] py-5" />
         </Link>
       </div>
-      <div className="second flex flex-col gap-3 px-5 h-[30%]">
+      <div className="second flex flex-col gap-3 px-5 h-[30%] aside_1">
         <h3 className="text-teal-500 px-5 text-[18px]">Dashboard </h3>
         <button className="flex items-center gap-2 text-[#f3f3f3] text-[16px] hover:bg-slate-700 rounded-md py-2 px-3">
           <span>
@@ -37,7 +38,7 @@ function Aside() {
           <span>Rated Cars</span>
         </button>
       </div>
-      <div className="third-con flex flex-col gap-3 px-5 h-[30%]">
+      <div className="third-con flex flex-col gap-3 px-5 h-[30%] aside_2">
         <h3 className="text-teal-500 px-5 text-[18px]">Category </h3>
         <button className="flex items-center gap-2 text-[#f3f3f3] text-[18px] hover:bg-slate-700 rounded-md py-2 px-3">
           <span>
@@ -58,7 +59,7 @@ function Aside() {
           <span>Unapproved Cars</span>
         </button>
       </div>
-      <div className="fourth h-[10%] mx-auto w-[100%] px-5">
+      <div className="fourth h-[10%] mx-auto w-[100%] px-5 aside_3">
         <button className="flex items-center gap-3 text-[#f3f3f3] text-[16px] bg-slate-700 rounded-md py-2 px-3 w-[100%] text-center">
           <span>
             <BiLogOutCircle />

@@ -57,7 +57,7 @@ function Home() {
           <div className="second-section-right-con w-[25%]">
             <div className="mb-3">
               <span className="text-[24px]  text-slate-600">
-                News and Lastest Post
+                News and Lastest Po
               </span>
             </div>
             <div className="flex flex-wrap flex-col gap-2">

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import  './Dashboard.css'
 import { BiLogOutCircle, BiUserCircle } from "react-icons/bi";
 import { FiEdit } from "react-icons/fi";
 import { IoCarSportOutline } from "react-icons/io5";
 import { MdOutlineChangeCircle } from "react-icons/md";
 import ChangePassword from "../../Components/Home/Dashboard/ChangePassword";
-import EditProfile from "./EditProfile";
+import EditProfile from "./EditProfile"
 import Profile from "./Profile";
 import UploadCar from "./UploadCar";
 import UpdateCar from "./UpdateCar";
@@ -13,14 +14,15 @@ import ViewCar from "./ViewCar";
 import { useDispatch } from "react-redux";
 import { logout } from "../../slice/authSlice";
 
+
 function Dashboard() {
   const [num, setNum] = useState(1);
   const [view, setView] = useState(false);
   const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch();
   return (
-    <div className="main mt-3 ml-3 flex">
-      <div className="dashboard-aside w-[18%] h-screen p-5 bg-slate-600 rounded-tr-md">
+    <div className="main   flex">
+      <div className="dashboard-aside  bg-slate-600 ">
         <ul className="flex flex-col gap-7 ml-5 h-[100%] mt-5">
           {num !== 1 ? (
             <div className="w-[150px] h-[150px] rounded-full overflow-hidden mb-5">
@@ -100,7 +102,7 @@ function Dashboard() {
         </ul>
       </div>
 
-      <div className="w-[100%]">
+      <div className="w-[100%] profile">
         {num === 1 && <Profile />}
         {num === 2 && <EditProfile />}
         {num === 3 && (
