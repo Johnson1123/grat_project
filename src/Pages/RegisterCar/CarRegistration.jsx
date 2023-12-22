@@ -11,32 +11,34 @@ import { useCarRegistrationMutation } from "../../slice/mutation/authApi";
 import axios from "axios";
 import { baseurl } from "../../baseurl";
 import { useSelector } from "react-redux";
+import Dropzone from "react-dropzone";
+import MyDropzone from "../Dashboard/uploadVideo/Upload";
+
 const CarRegistration = () => {
-  const [images, setImages] = useState(null);
+  const [images, setImages] = useState([]);
   const [videos, setVideos] = useState(null);
   const mydata = useSelector((state) => state.auth);
   let token = mydata.userData?.data?.token;
   const [submitCar, { isLoading, errors }] = useCarRegistrationMutation();
+  const video = useSelector((state) => state.video.video);
+  console.log(video);
 
   const handleImage = (e) => {
-    const files = e.target.files[0];
+    const files = e.target.files;
     setImages(files);
-  };
-  const handleVideo = (e) => {
-    const files = e.target.files[0];
-    setVideos(files);
   };
   const onSubmit = async (value, actions) => {
     try {
       const formData = new FormData();
-      // formData.append("text", ...value);
 
-      formData.append("images", images);
-      formData.append("video", videos);
+      for (const file of images) {
+        formData.append("images", file);
+      }
       formData.append("engine", value.engine);
       formData.append("generation", value.generation);
       formData.append("make", value.make);
       formData.append("model", value.model);
+      formData.append("video", video);
       const res = await axios.post(`${baseurl}/register/car`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -120,6 +122,7 @@ const CarRegistration = () => {
               id="generation"
             />
           </div>
+<<<<<<< HEAD
 
           <div className="upload-container">
             <div className="contain flex items-center mt-5  gap-2 w-[45%] uploadCar">
@@ -154,6 +157,39 @@ const CarRegistration = () => {
               <p>Picture</p>
             </div>
 
+=======
+          <div className="contain flex items-center mt-5  gap-2 w-[45%]">
+            {/* <label htmlFor="video">
+              <MdSlowMotionVideo size={50} className=" text-slate-400" />
+            </label>
+            <input
+              type="file"
+              accept="video/*"
+              multiple
+              className="h-[40px] rounded-md px-2 focus:outline-none"
+              onChange={handleVideo}
+              name="video"
+              id="video"
+              hidden
+            />
+            <p>Video</p> */}
+            <MyDropzone />
+          </div>
+          <div className="contain flex items-center  gap-2 mt-5 w-[45%]">
+            <label htmlFor="image">
+              <CiImageOn size={50} className=" text-slate-400" />
+            </label>
+            <input
+              type="file"
+              multiple
+              className="h-[40px] rounded-md px-2 focus:outline-none"
+              onChange={handleImage}
+              name="image"
+              id="image"
+              hidden
+            />
+            <p>Picture</p>
+>>>>>>> ee81cdb20928844f0b846f808fd7be1db38b5055
           </div>
         </div>
         <div className="flex justify-center">
